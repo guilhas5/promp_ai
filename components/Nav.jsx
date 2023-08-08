@@ -124,7 +124,6 @@ const Nav = () => {
           </>
         )}
       </div>
-      {console.log(ToggleMenu)}
     </nav>
   );
 };
