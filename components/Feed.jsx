@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import PromptCart from "./PromptCart";
+
 const PromptCartList = ({data, handleTagClick}) => {
   return (
     <div className="mt-16 prompt_layout">
