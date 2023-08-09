@@ -8,10 +8,9 @@ const UserSchema = new Schema({
   },
   username: {
     type: String,
-    unique: [true, "Email already exists!"],
-    required: [true, "Insert an Username"],
+    required: [true, "Username is required!"],
     match: [
-      /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,
+      /^[A-Za-z][A-Za-z0-9_]{4,29}$/,
       "Username invalid, it should contain 8-20 alphanumeric letters and be unique!",
     ],
   },
