@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 import PromptCart from "./PromptCart";
 
@@ -17,7 +19,7 @@ const PromptCartList = ({ data, handleTagClick }) => {
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
   const [searchPosts, setSearchPosts] = useState([]);
-
+  const router = useRouter()
   const [posts, setPosts] = useState([]);
 
   const handleSearchChange = (e) => {
@@ -57,6 +59,9 @@ const Feed = () => {
     }
   }, [searchText, posts]);
 
+  const handlePostClick = (userId) => {
+    router.push(`/profile?id=${userId}`);
+  };
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
