@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-const PromptCart = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState("");
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -85,4 +85,4 @@ const PromptCart = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   );
 };
 
-export default PromptCart;
+export default PromptCard;

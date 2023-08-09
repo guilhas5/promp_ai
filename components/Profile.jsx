@@ -1,4 +1,4 @@
-import PromptCart from "./PromptCart";
+import PromptCard from "./PromptCard";
 
 const Profile = ({ name, description, data, handleEdit, handleDelete }) => {
   return (
@@ -9,7 +9,7 @@ const Profile = ({ name, description, data, handleEdit, handleDelete }) => {
       <p className="desc text-left">{description}</p>
       <div className="mt-10 prompt_layout">
       {data.map((post) => (
-        <PromptCart
+        <PromptCard
         key={post.id}
         post={post}
         handleEdit={() => handleEdit && handleEdit(post)}
