@@ -30,12 +30,21 @@ const UserProfile = ({ params }) => {
     }
   }, [params.id]);
 
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  
   return (
     <Profile
-      name={userName}
-      description={`Welcome to ${userName}'s profile page. Explore ${userName}'s amazing prompts and get inspired. Together we are stronger!`}
+      name={capitalizeFirstLetter(userName)}
+      description={`Welcome to ${capitalizeFirstLetter(
+        userName
+      )}'s profile page. Explore ${capitalizeFirstLetter(
+        userName
+      )}'s amazing prompts and get inspired. Together we are stronger!`}
       data={userPosts}
     />
   );
-};
-export default UserProfile
+}
+
+export default UserProfile;
