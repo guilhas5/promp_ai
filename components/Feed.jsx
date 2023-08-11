@@ -38,14 +38,16 @@ const Feed = () => {
   }, []);
 
   const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, "i");
-    return allPosts.filter(
-      (item) =>
-        regex.test(item.creator.username) ||
-        regex.test(item.tag) ||
-        regex.test(item.prompt)
+  const regex = new RegExp(searchtext, "i");
+  return allPosts.filter((item) => {
+    const creatorUsername = item.creator && item.creator.username;
+    return (
+      regex.test(creatorUsername) ||
+      regex.test(item.tag) ||
+      regex.test(item.prompt)
     );
-  };
+  });
+};
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
